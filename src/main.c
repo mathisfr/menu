@@ -30,7 +30,7 @@ int main (void){
         //Check and set cursor position
         checkPositionCursor(cursor, menu);
 
-        //Touch varialbe, get char enter by user
+        //Touch variable, get char enter by user
         char touch = getch();
 
         if(touch == up){
