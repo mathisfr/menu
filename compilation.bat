@@ -7,7 +7,7 @@
  echo +                         +
  echo ===========================
 
- gcc src/*.c -o bin/prog -I
+ gcc src/*.c -o bin/prog
  pause
  
  cls
