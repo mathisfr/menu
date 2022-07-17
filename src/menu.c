@@ -11,7 +11,7 @@ void welcome(){
     printf("------------------------\n");
 }
 
-//Actuel MENU_SIZE = 2, change in menuData.h for more length
+//Currently: MENU_SIZE = 2, change in menuData.h MENU_SIZE for more length
 char menu[MENU_SIZE][MENU_SIZE_ITEM] = {"Google", "Exit"};
 
 char up = 'z';
