@@ -19,6 +19,9 @@ int main (void){
     //Currently: MENU_SIZE = 2, change in menuData.h MENU_SIZE for more length
     char menu[MENU_SIZE][MENU_SIZE_ITEM] = {"Google", "Exit"};
 
+    //Touch variable, get char enter by user
+    char touch;
+
     while(1){
 
         //Clean screan CMD
@@ -27,31 +30,14 @@ int main (void){
         //Welcome message
         welcome();
 
-        //Check and set cursor position
-        checkPositionCursor(cursor, menu);
+        //Draw cursor first position
+        drawCursor(cursor, menu);
 
         //Touch variable, get char enter by user
-        char touch = getch();
+        touch = getch();
 
-        if(touch == up){
-            cursor = cursor - 1;
-        }
-
-        if(touch == down){
-            cursor = cursor + 1;
-        }
-
-        if(cursor == CURSOR_MIN){
-            cursor = CURSOR_MIN;
-        }else if(cursor < CURSOR_MIN){
-            cursor = CURSOR_MAX;
-        }
-        
-        if(cursor == CURSOR_MAX){
-            cursor = CURSOR_MAX;
-        }else if(cursor > CURSOR_MAX){
-            cursor = CURSOR_MIN;
-        }
+        //Set position cursor (Pass by reference)
+        setCursorPosition(&cursor, touch);
 
         if(touch == choice){
             // Google
