@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "conio.h": "c",
+        "stdlib.h": "c",
+        "menu.h": "c",
+        "typeinfo": "c",
+        "menudata.h": "c"
+    },
+    "C_Cpp.dimInactiveRegions": false
+}
