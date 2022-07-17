@@ -5,7 +5,8 @@
         "stdlib.h": "c",
         "menu.h": "c",
         "typeinfo": "c",
-        "menudata.h": "c"
+        "menudata.h": "c",
+        "cursordata.h": "c"
     },
     "C_Cpp.dimInactiveRegions": false
 }

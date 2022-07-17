@@ -2,28 +2,36 @@
 #include <stdlib.h>
 #include <conio.c>
 
+//All info for menu
 #include "menuData.h"
 #include "menu.h"
 
+//All info for cursor
+#include "cursorData.h"
+#include "cursor.h"
+
+
 int main (void){
+
+    //Create cursor
     int cursor = CURSOR_MIN;
+
+    //Currently: MENU_SIZE = 2, change in menuData.h MENU_SIZE for more length
+    char menu[MENU_SIZE][MENU_SIZE_ITEM] = {"Google", "Exit"};
 
     while(1){
 
+        //Clean screan CMD
         clrscr();
+
+        //Welcome message
         welcome();
 
-        int i;
-        for(i = 0; i < MENU_SIZE; i++){
-            if(i == cursor){
-                cprintf("-> ");
-            }else{
-                cprintf("   ");
-            }
-            cprintf("%s\n", menu[i]);
-        }
+        //Check and set cursor position
+        checkPositionCursor(cursor, menu);
 
-        touch = getch();
+        //Touch varialbe, get char enter by user
+        char touch = getch();
 
         if(touch == up){
             cursor = cursor - 1;
@@ -33,12 +41,16 @@ int main (void){
             cursor = cursor + 1;
         }
 
-        if(cursor < CURSOR_MIN){
+        if(cursor == CURSOR_MIN){
             cursor = CURSOR_MIN;
+        }else if(cursor < CURSOR_MIN){
+            cursor = CURSOR_MAX;
         }
         
-        if(cursor > CURSOR_MAX){
+        if(cursor == CURSOR_MAX){
             cursor = CURSOR_MAX;
+        }else if(cursor > CURSOR_MAX){
+            cursor = CURSOR_MIN;
         }
 
         if(touch == choice){

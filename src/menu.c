@@ -11,11 +11,6 @@ void welcome(){
     printf("------------------------\n");
 }
 
-//Currently: MENU_SIZE = 2, change in menuData.h MENU_SIZE for more length
-char menu[MENU_SIZE][MENU_SIZE_ITEM] = {"Google", "Exit"};
-
 char up = 'z';
 char down = 's';
 char choice = 'e';
-
-char touch = ' ';

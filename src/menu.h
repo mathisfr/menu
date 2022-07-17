@@ -7,6 +7,5 @@
     extern char up;
     extern char down;
     extern char choice;
-    extern char touch;
 
 #endif
